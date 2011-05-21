@@ -20,7 +20,7 @@ public class PlayBeanDeploymentArchiveFactory {
         List<URL> discoveredBeanXmlUrls = new ArrayList<URL>();
         Enumeration beansXml = null;
         try {
-            beansXml = Play.classloader.getResources("conf/beans.xml");
+            beansXml = Play.classloader.getResources("META-INF/beans.xml");
         } catch (IOException ex) {
             beansXml = Collections.enumeration(Collections.emptyList());
         }

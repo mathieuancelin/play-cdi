@@ -1,5 +1,6 @@
 package play.modules.cdi;
 
+import java.net.URL;
 import org.jboss.weld.bootstrap.WeldBootstrap;
 import org.jboss.weld.bootstrap.api.Bootstrap;
 import org.jboss.weld.manager.api.WeldManager;
@@ -39,10 +40,6 @@ public class Weld {
         Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
         // -------------
         try {
-            Enumeration beansXml = Play.classloader.getResources("conf/beans.xml");
-            if (beansXml == null) {
-                return started;
-            }
             bootstrap = new WeldBootstrap();
             deployment = createDeployment(bootstrap);
             // Set up the container
