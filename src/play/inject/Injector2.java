@@ -12,6 +12,10 @@ import play.classloading.enhancers.ControllersEnhancer.ControllerSupport;
 import play.jobs.Job;
 import play.mvc.Mailer;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class Injector2 {
     
     /**
@@ -25,6 +29,7 @@ public class Injector2 {
             for(Method method : clazz.getDeclaredMethods()) {
                 if(Modifier.isStatic(method.getModifiers()) && method.isAnnotationPresent(Inject.class)) {
                     Class<?>[] parameterTypes = method.getParameterTypes();
+                    // TODO : use TypeLiteral when generic params
                     Type[] genericParameterTypes = method.getGenericParameterTypes();
                     Annotation[][] parameterAnnotations = method.getParameterAnnotations();
                     Object[] parameters = new Object[parameterTypes.length];

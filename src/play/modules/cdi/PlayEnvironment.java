@@ -8,6 +8,10 @@ import org.jboss.weld.resources.spi.ScheduledExecutorServiceFactory;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayEnvironment implements Environment {
 
     @Override

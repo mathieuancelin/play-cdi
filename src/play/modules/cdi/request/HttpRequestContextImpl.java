@@ -9,6 +9,10 @@ import org.jboss.weld.context.beanstore.SimpleNamingScheme;
 import org.jboss.weld.context.beanstore.NamingScheme;
 import play.mvc.Http.Request;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class HttpRequestContextImpl extends AbstractBoundContext<Request> implements HttpRequestContext {
 
     private static final String IDENTIFIER = HttpRequestContextImpl.class.getName();

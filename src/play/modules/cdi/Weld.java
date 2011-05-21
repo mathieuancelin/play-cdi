@@ -1,6 +1,5 @@
 package play.modules.cdi;
 
-import java.net.URL;
 import org.jboss.weld.bootstrap.WeldBootstrap;
 import org.jboss.weld.bootstrap.api.Bootstrap;
 import org.jboss.weld.manager.api.WeldManager;
@@ -9,12 +8,14 @@ import javax.enterprise.event.Event;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.BeanManager;
 import java.util.Collection;
-import java.util.Enumeration;
 import play.Logger;
-import play.Play;
 import play.modules.cdi.discovery.PlayBeanDeploymentArchiveFactory;
 import play.modules.cdi.discovery.PlayDeployment;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class Weld {
 
     private PlayDeployment deployment;

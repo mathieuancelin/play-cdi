@@ -9,6 +9,10 @@ import org.jboss.weld.ejb.spi.EjbDescriptor;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayBeanDeploymentArchive implements BeanDeploymentArchive {
 
     private String id;
@@ -58,6 +62,5 @@ public class PlayBeanDeploymentArchive implements BeanDeploymentArchive {
     public void setBeansXml(BeansXml beansXml) {
         this.beansXml = beansXml;
     }
-
 }
 

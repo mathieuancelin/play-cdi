@@ -12,6 +12,10 @@ import org.jboss.weld.bootstrap.api.helpers.SimpleServiceRegistry;
 import org.jboss.weld.bootstrap.spi.Deployment;
 import org.jboss.weld.bootstrap.spi.Metadata;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayDeployment implements Deployment {
 
     private final BeanDeploymentArchive beanDeploymentArchive;
@@ -22,8 +26,7 @@ public class PlayDeployment implements Deployment {
         this.serviceRegistry = new SimpleServiceRegistry();
         this.extensions = bootstrap.loadExtensions(getClass().getClassLoader());
         this.beanDeploymentArchive = factory.scan(bootstrap);
-        ResourceLoader loader = new PlayResourceLoader();
-        this.beanDeploymentArchive.getServices().add(ResourceLoader.class, loader);
+        this.beanDeploymentArchive.getServices().add(ResourceLoader.class, new PlayResourceLoader());
     }
 
     @Override

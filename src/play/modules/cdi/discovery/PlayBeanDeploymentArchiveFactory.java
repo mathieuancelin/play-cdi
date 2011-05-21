@@ -12,6 +12,10 @@ import java.util.List;
 import play.Play;
 import play.classloading.ApplicationClasses.ApplicationClass;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayBeanDeploymentArchiveFactory {
 
     // TODO : need to scan lib dir !!!

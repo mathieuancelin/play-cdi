@@ -9,6 +9,10 @@ import org.jboss.weld.util.collections.EnumerationList;
 import org.jboss.weld.util.reflection.Reflections;
 import play.mvc.Http.Request;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class RequestBeanStore extends AttributeBeanStore {
 
     private final Request request;

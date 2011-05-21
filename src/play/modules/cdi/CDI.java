@@ -5,6 +5,10 @@ import javax.enterprise.event.Event;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.BeanManager;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class CDI {
     
     public static <T> T getBeanOfType(Class<T> type, Annotation... qualifiers) {

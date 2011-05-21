@@ -6,6 +6,10 @@ import play.inject.BeanSource2;
 import play.inject.Injector2;
 import play.mvc.Http;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class CDIPlugin extends PlayPlugin implements BeanSource2 {
 
     public static final Weld weld = new Weld();

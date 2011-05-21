@@ -8,6 +8,10 @@ import javax.enterprise.inject.spi.Extension;
 import play.modules.cdi.request.HttpRequestContext;
 import play.modules.cdi.request.HttpRequestContextImpl;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayExtension implements Extension {
 
     public static HttpRequestContext requestContext;
@@ -23,5 +27,4 @@ public class PlayExtension implements Extension {
     public void afterBeanDiscovery(@Observes AfterBeanDiscovery event) {
         event.addContext(requestContext);
     }
-
 }

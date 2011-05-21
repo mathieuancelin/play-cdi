@@ -9,6 +9,10 @@ import java.net.URL;
 import java.util.Collection;
 import play.Play;
 
+/**
+ *
+ * @author Mathieu ANCELIN
+ */
 public class PlayResourceLoader implements ResourceLoader {
 
     @Override
