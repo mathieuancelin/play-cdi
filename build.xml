@@ -23,6 +23,7 @@
         <mkdir dir="lib" />
         <copy todir="tmp/classes">
             <fileset dir="src">
+                <include name="META-INF/**"/>
                 <include name="**/*.properties"/>
                 <include name="**/*.xml"/>
                 <include name="**/play.plugins"/>

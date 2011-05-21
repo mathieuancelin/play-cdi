@@ -4,11 +4,11 @@ import java.lang.annotation.Annotation;
 import play.PlayPlugin;
 import play.inject.BeanSource2;
 import play.inject.Injector2;
+import play.mvc.Http;
 
 public class CDIPlugin extends PlayPlugin implements BeanSource2 {
 
     public static final Weld weld = new Weld();
-
     public static boolean started = false;
 
     @Override
@@ -34,6 +34,22 @@ public class CDIPlugin extends PlayPlugin implements BeanSource2 {
             return weld.getInstance().select(clazz, qualifiers).get();
         } else {
             throw new IllegalStateException("CDI container not started");
+        }
+    }
+
+    @Override
+    public void beforeInvocation() {
+        PlayExtension.requestContext.associate(Http.Request.current.get());
+        PlayExtension.requestContext.activate();
+    }
+
+    @Override
+    public void afterInvocation() {
+        try {
+            PlayExtension.requestContext.invalidate();
+            PlayExtension.requestContext.deactivate();
+        } finally {
+            PlayExtension.requestContext.dissociate(Http.Request.current.get());
         }
     }
 }

@@ -14,6 +14,7 @@ import play.classloading.ApplicationClasses.ApplicationClass;
 
 public class PlayBeanDeploymentArchiveFactory {
 
+    // TODO : need to scan lib dir !!!
     public BeanDeploymentArchive scan(Bootstrap bootstrap) {
         List<String> discoveredClasses = new ArrayList<String>();
         List<URL> discoveredBeanXmlUrls = new ArrayList<URL>();
