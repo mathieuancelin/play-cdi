@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set title:'Number Guess' /}
+
+<h1>Guess a number...</h1>
+<div id="numberGuess">
+    <div style="color: red">
+        ${message}
+    </div>
+    #{ifnot guessed}
+    <div>
+       I'm thinking of a number between
+       <span id="numberGuess:smallest">${smallest}</span>
+       and
+       <span id="numberGuess:biggest">${biggest}</span>.
+       You have ${remainingGuesses} guesses remaining.
+    </div>
+    <div>
+        <br/>Your guess:
+       <form action="@{Application.guess(guess)}">
+           <input type="text" id="guess" name="guess">
+           <br/>
+           <input type="submit" value="Guess">
+       </form>
+       <form action="@{Application.reset()}">
+           <input type="submit" value="Reset">
+       </form>
+    </div>
+    #{/ifnot}
+</div>
