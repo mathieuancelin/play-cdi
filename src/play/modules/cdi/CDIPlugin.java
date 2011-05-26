@@ -1,6 +1,7 @@
 package play.modules.cdi;
 
 import java.lang.annotation.Annotation;
+import javax.enterprise.util.TypeLiteral;
 import play.PlayPlugin;
 import play.inject.BeanSource2;
 import play.inject.Injector2;
@@ -36,6 +37,15 @@ public class CDIPlugin extends PlayPlugin implements BeanSource2 {
     public <T> T getBeanOfType(Class<T> clazz, Annotation... qualifiers) {
         if (started) {
             return weld.getInstance().select(clazz, qualifiers).get();
+        } else {
+            throw new IllegalStateException("CDI container not started");
+        }
+    }
+
+    @Override
+    public <T> T getBeanOfType(TypeLiteral<T> type, Annotation... qualifiers) {
+        if (started) {
+            return weld.getInstance().select(type, qualifiers).get();
         } else {
             throw new IllegalStateException("CDI container not started");
         }
