@@ -8,7 +8,6 @@ import javax.enterprise.event.Event;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.BeanManager;
 import java.util.Collection;
-import play.Logger;
 import play.modules.cdi.discovery.PlayBeanDeploymentArchiveFactory;
 import play.modules.cdi.discovery.PlayDeployment;
 
@@ -78,7 +77,6 @@ public class Weld {
                     started = false;
                     return true;
                 } else {
-                    Logger.info("Skipping spurious call to shutdown");
                     return false;
                 }
             }
