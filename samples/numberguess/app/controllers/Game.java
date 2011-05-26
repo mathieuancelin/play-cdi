@@ -45,10 +45,18 @@ public class Game {
 
     @PostConstruct
     private void update() {
-        number = Integer.valueOf(session.get("number"));
-        smallest = Integer.valueOf(session.get("smallest"));
-        biggest = Integer.valueOf(session.get("biggest"));
-        remainingGuesses = Integer.valueOf(session.get("remainingGuesses"));
+        number = getInSession("number");
+        smallest = getInSession("smallest");
+        biggest = getInSession("biggest");
+        remainingGuesses = getInSession("remainingGuesses");
+    }
+
+    private int getInSession(final String key) {
+        String value = session.get(key);
+        if (value == null) {
+            return -1;
+        }
+        return Integer.valueOf(value);
     }
 
     public void push() {
