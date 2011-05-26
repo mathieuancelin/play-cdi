@@ -2,3 +2,4 @@ nbproject
 target
 dist
 .DS_Store
+tmp
