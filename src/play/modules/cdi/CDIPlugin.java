@@ -3,8 +3,8 @@ package play.modules.cdi;
 import java.lang.annotation.Annotation;
 import javax.enterprise.util.TypeLiteral;
 import play.PlayPlugin;
-import play.inject.BeanSource2;
-import play.inject.Injector2;
+import play.modules.cdi.inject.BeanSource2;
+import play.modules.cdi.inject.Injector2;
 import play.mvc.Http;
 
 /**

@@ -8,8 +8,8 @@ import javax.enterprise.event.Event;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.BeanManager;
 import java.util.Collection;
-import play.modules.cdi.discovery.PlayBeanDeploymentArchiveFactory;
-import play.modules.cdi.discovery.PlayDeployment;
+import play.modules.cdi.deployment.PlayBeanDeploymentArchiveFactory;
+import play.modules.cdi.deployment.PlayDeployment;
 
 /**
  *

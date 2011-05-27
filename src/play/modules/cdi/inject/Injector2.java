@@ -1,4 +1,4 @@
-package play.inject;
+package play.modules.cdi.inject;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
